@@ -844,7 +844,7 @@ MFRC522::StatusCode MFRC522Extended::TCL_Transceive(TagInfo *tag, byte *sendData
 		if (result != STATUS_OK)
 			return result;
 
-		if (backData && (backLen > 0)) {
+		if (backData != nullptr && (backLen > 0)) {
 			if ((*backLen + ackDataSize) > totalBackLen)
 				return STATUS_NO_ROOM;
 
